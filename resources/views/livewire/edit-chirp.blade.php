@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col">
                 <form
-                    wire:submit='store'>
+                    wire:submit='updateChirp'>
                 <main class="post"> 
                     <div class="wrapper"> 
                         <section class="create-post"> 
@@ -20,21 +20,16 @@
                                 wire:model.blur='content'
                                 id="content"
                                 cols="30" rows="5" 
-                                placeholder="What's on you mind, Geek?">
+                                placeholder="Modifica il tuo Chirp!">
 
                                 </textarea> 
                                 <div class="text-danger">@error('title') {{ $message }} @enderror</div>
-
-                                <div class="hashtag">
-                                    <label for="tags" class="form-label">Tags</label>
-                                    <input type="text" class="form-control" id="tags" wire:model.defer="tags" placeholder="Inserisci i tag separati da virgola">
-                                    <span>
-                                        <i class="bi fs-4 bi-hash"></i>
-                                    </span>
-                                </div>
-                                     
-    
-                                </div>  
+            
+                                <div class="emoji-picker"> 
+                                    <emoji-picker class="light"></emoji-picker> 
+                                    <i class="emoji" aria-label="Insert an emoji" 
+                                       role="img"></i> 
+                                </div> 
                                 <div class="add-to-your-post"> 
                                     <span class="add-to-post-text">Add to your post</span> 
                                     <div class="add-to-post-icons"> 
@@ -46,10 +41,10 @@
 
                                             <div class="text-danger">@error('title') {{ $message }} @enderror</div>
             
-                                        </div> 
+                                        </div>  
                                     </div> 
                                 </div> 
-                                <button type="submit" class="post-btn">Post</button>
+                                <button type="submit" class="post-btn" >Modifica</button> 
                             </div> 
                         </section> 
                     </div> 

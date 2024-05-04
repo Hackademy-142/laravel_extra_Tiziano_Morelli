@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chirp;
 use Illuminate\Http\Request;
 
 class PublicController extends Controller
@@ -10,7 +11,7 @@ class PublicController extends Controller
         return view('welcome');
     }
 
-    public function login(){
-        
+    public function edit(Chirp $chirp){
+        return view('chirp.edit', compact('chirp'));
     }
 }

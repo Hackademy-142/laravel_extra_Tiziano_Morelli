@@ -19,11 +19,11 @@
                             <img src="{{Storage::url($chirp->img)}}" alt="" class="tweet-img">
                         </div>
                         <div class="mx-auto text-end my-3 w-100">
-                            <a href="">
+                            <a href="{{route('edit', compact('chirp'))}}">
                                 <i class="bi text-primary fs-4 bi-pencil-square"></i>
                             </a>
                             <button class="btn" wire:click="destroy({{$chirp}})">
-                                <i class="bi text-danger fs-4 bi-trash3" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+                                <i class="bi text-danger fs-4 bi-trash3" ></i>
                             </button>
                         </div>
                     </div>
