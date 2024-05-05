@@ -13,13 +13,13 @@
                 </div>
             </div>
             
-                <div class="col-4 top-0 end-0">
-                <div class=" access text-end d-md-block">
+                <div class="col-4 mx-auto top-0 end-0">
+                <div class="access text-end">
                     <ul class="navbar-nav">
                         
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <button class="blackLink siteLink">Account</button>
+                                <button class="btn"><i class="bi fs-4 bi-person-circle"></i></button>
                             </a>
                             
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -31,7 +31,7 @@
                                 <li>
                                     <form  method="POST" action="{{route('logout')}}">
                                         @csrf
-                                        <button class="dropdown-item blackLink siteLink" type="submit">Logout</button>
+                                        <button class="dropdown-item" type="submit">Logout</button>
                                     </form>
                                 </li>
                                 @endauth

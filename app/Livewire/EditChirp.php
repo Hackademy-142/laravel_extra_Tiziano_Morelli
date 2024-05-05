@@ -2,13 +2,14 @@
 
 namespace App\Livewire;
 
+use App\Models\Tag;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 
 class EditChirp extends Component
 {
-    use WithFileUploads; // Utilizza il trait WithFileUploads
+    use WithFileUploads; 
 
     #[Validate('required', message: 'Il campo è obbligatorio.')]
     #[Validate('min:5', message: 'Il titolo deve avere almeno 5 caratteri.')]
@@ -18,6 +19,9 @@ class EditChirp extends Component
 
     public $chirp;
 
+    public $name;
+
+
     public function mount (){
         $this->content = $this->chirp->content;
         $this->img = $this->chirp->img;
@@ -26,6 +30,7 @@ class EditChirp extends Component
     public function updateChirp()
 {
     $this->validate();
+    
 
     $path = $this->chirp->img;
 
@@ -38,6 +43,23 @@ class EditChirp extends Component
         'img' => $path,
     ]);
 
+    if(empty($this->name)){
+        $id = null;
+    } elseif (!Tag::where('name', $this->name)->exists()){
+
+        $tag= Tag::create([
+            'name' => $this->name
+        ]);
+
+        $id = $tag['id'];
+
+    }else{
+        $tag = Tag::where('name' ,$this->name)->first();
+        $id = $tag->id;
+
+    }
+    $this->chirp->tags()->sync($id);
+
     $this->reset();
 
     session()->flash('message', 'Articolo aggiornato correttamente');
@@ -47,6 +69,8 @@ class EditChirp extends Component
 
     public function render()
     {
-        return view('livewire.edit-chirp');
+        $tags = Tag::all();
+
+        return view('livewire.edit-chirp', compact('tags'));
     }
 }

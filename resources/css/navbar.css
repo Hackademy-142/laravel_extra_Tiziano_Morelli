@@ -88,10 +88,7 @@
     outline:none
   }
 
-.access {
-  display: flex !important;
-  align-items: right !important;
-}
+
 
 .rownav {
   width: 100%;

@@ -11,7 +11,7 @@
                             <div class="post-header"> 
                                 <div class="profile-pic"></div> 
                                 <div class="user-info"> 
-                                    <div class="full-name">Nome</div> 
+                                    <div class="full-name">{{$user->name}}</div> 
                                 </div> 
                             </div> 
                             <div class="post-content"> 
@@ -20,18 +20,15 @@
                                 wire:model.blur='content'
                                 id="content"
                                 cols="30" rows="5" 
-                                placeholder="What's on you mind, Geek?">
+                                placeholder="What's on you mind, {{$user->name}}?">
 
                                 </textarea> 
-                                <div class="text-danger">@error('title') {{ $message }} @enderror</div>
+                                <div class="text-danger">@error('content') {{ $message }} @enderror</div>
 
                                 <div class="hashtag">
-                                    <label for="tags" class="form-label">Tags</label>
-                                    <input type="text" class="form-control" id="tags" wire:model.defer="tags" placeholder="Inserisci i tag separati da virgola">
-                                    <span>
-                                        <i class="bi fs-4 bi-hash"></i>
-                                    </span>
-                                </div>
+                                    <input wire:model="name" class="border tag rounded-2 w-75 h-25" wire:model.blur="tag" id="tag">
+                                    <i class="bi fs-4 bi-hash"></i>
+                                 </div>
                                      
     
                                 </div>  
@@ -44,7 +41,7 @@
 
                                             <label for="img" class="file-label"><i class="bi fs-4 photo-video bi-image-fill"></i></label>
 
-                                            <div class="text-danger">@error('title') {{ $message }} @enderror</div>
+                                            <div class="text-danger">@error('img') {{ $message }} @enderror</div>
             
                                         </div> 
                                     </div> 

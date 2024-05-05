@@ -11,9 +11,14 @@
                             <div class="post-header"> 
                                 <div class="profile-pic"></div> 
                                 <div class="user-info"> 
-                                    <div class="full-name">Nome</div> 
+                                    <div class="full-name">
+                                        
+                                    </div> 
                                 </div> 
                             </div> 
+
+                            
+                        
                             <div class="post-content"> 
             
                                 <textarea
@@ -23,7 +28,12 @@
                                 placeholder="Modifica il tuo Chirp!">
 
                                 </textarea> 
-                                <div class="text-danger">@error('title') {{ $message }} @enderror</div>
+                                <div class="hashtag my-3">
+                                    <input wire:model="name" class="border tag rounded-2 w-75 h-25" wire:model.blur="tag" id="tag">
+                                    <i class="bi fs-4 bi-hash"></i>
+                                 </div>
+                               
+                                <div class="text-danger">@error('content') {{ $message }} @enderror</div>
             
                                 <div class="emoji-picker"> 
                                     <emoji-picker class="light"></emoji-picker> 
