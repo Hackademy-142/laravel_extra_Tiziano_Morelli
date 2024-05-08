@@ -8,7 +8,7 @@
                     @foreach ($chirp->sortbydesc('id') as $chirp )
                     <div class="tweet-wrap">
                         <div class="tweet-header">
-                            <img src="{{$chirp->user->img}}" alt="" class="avator">
+                            <img src="{{Storage::url($chirp->user->img)}}" alt="" class="avator">
                             <div class="tweet-header-info">
                                 {{$chirp->user->name}}
                                 <p>{{$chirp->content}}</p>

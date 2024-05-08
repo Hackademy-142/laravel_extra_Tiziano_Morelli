@@ -2,7 +2,7 @@
     <x-layout>
         <div class="container my-5">
           <div class="row justify-content-center align-items-center text-center">
-            <h2>accedi adesso.</h2>
+            <h2 class="mb-3">Accedi adesso!</h2>
             <div class="col-4">
               <form 
               class="p-3 rounded-5 border border-dark"
@@ -19,7 +19,18 @@
                     <input name="password" type="password" class="form-control" id="password">
                   </div>
                   <button type="submit" class="btn rounded-5 border border-dark">Submit</button>
+                    
+
                 </form>
+                <div class="container my-3">
+                  <div class="row">
+                    <div class="col">
+                      <a class="link-offset-2 fs-6 link-dark p-1 link-underline link-underline-opacity-0" href="{{route('register')}}">
+                        Non hai un account? <br> Registrati
+                      </a>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
