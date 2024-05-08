@@ -29,19 +29,19 @@
       <div class="col">
         <ul class="list-unstyled d-flex align-items-center justify-content-center my-3 gap-3">
           <li class="position-relative text-danger fs-1">
-            <a href="" class="decoration-none">
+            <a href="" class="">
               <i class="bi bi-youtube">
               </i>
             </a>
           </li>
           <li class="position-relative fs-3 text-primary">
-            <a href="" class="decoration-none">
+            <a href="" class="">
               <i class="bi bi-facebook">
               </i>
             </a>
           </li>
           <li class="position-relative text-danger fs-3">
-            <a href="" class="decoration-none">
+            <a href="" class="">
               <i class="bi bi-instagram">
               </i>
             </a>
